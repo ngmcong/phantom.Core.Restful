@@ -4,7 +4,11 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	<VersionPrefix>1.0.1</VersionPrefix>
     <RepositoryUrl>https://github.com/ngmcong/phantom.Core.Restful</RepositoryUrl>
+    <Authors>phantom</Authors>
+    <Description>Base methods for http client.</Description>
+    <Copyright>phantom 2025</Copyright>
   </PropertyGroup>
 
 </Project>

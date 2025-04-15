@@ -12,14 +12,14 @@ namespace phantom.Core.Restful
             PropertyNameCaseInsensitive = true
         };
 
-        public T? GetAysnc<T>(string url)
+        public async Task<T?> GetAysnc<T>(string url)
         {
             using (HttpClient client = new HttpClient())
             {
-                var response = client.GetAsync($"{BaseUrl}/{url}").Result;
+                var response = await client.GetAsync($"{BaseUrl}/{url}");
                 if (response.IsSuccessStatusCode)
                 {
-                    var json = response.Content.ReadAsStringAsync().Result;
+                    var json = await response.Content.ReadAsStringAsync();
                     var data = JsonSerializer.Deserialize<T>(json, RestfulHelper.JsonSerializerOptions);
                     return data;
                 }
